@@ -1,4 +1,8 @@
 /* this file is for netpix css */
-.body{
+body{
     background-color: #141414;
+}
+.header{
+    float: left;
+    width: 15%;
 }
