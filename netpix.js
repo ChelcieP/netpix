@@ -1,4 +1,4 @@
-// this file is for netpix javascript
+// home page ------------------------------------------------------------------------------------------------------------
 function getPopularShows(){
     const fetchPromise = fetch("https://www.episodate.com/api/most-popular?page=1",
     {
@@ -8,24 +8,102 @@ function getPopularShows(){
     });
 
     const streamPromise = fetchPromise.then((response)=>response.json());
-    console.log(streamPromise);
+    // console.log(streamPromise);
     streamPromise.then((data)=>insertPopular(data.tv_shows));
 };
 
 function insertPopular(data){
-    console.log(data);
     let htmlcode ="";
     const addTvShow =(show) =>{
-        htmlcode += "<div class='column'>";
+        htmlcode += "<button class='column'>";
         htmlcode += "<div class='popularTvShow'>";
         htmlcode += "<div class='pMiddle'>";
         htmlcode += "<img class='popular-img' src='"+show.image_thumbnail_path+"'>";
         htmlcode += "</div>";
         htmlcode += "</div>";
-        htmlcode += "</div>";
+        htmlcode += "</button>";
 
     }
     data.forEach(addTvShow);
     document.getElementById("popularshows").innerHTML=htmlcode;
 }
+// search page ----------------------------------------------------------------------------------------------------------------------
+function showSearchPage(){
+    document.getElementById("homepage").style.display="none";
+    document.getElementById("searchresults").style.display="block";
+}
+function getSearchResults(){
+    const searchValue = document.getElementById("searchbar").value;
+    getTvShows(searchValue);
+}
+
+function getTvShows(search){
+    const fetchPromise = fetch("https://www.episodate.com/api/search?q="+search,
+    {
+        headers:{
+            "Accept":"application/json",
+        },
+    });
+    const streamPromise = fetchPromise.then((response)=>response.json());
+    streamPromise.then((data)=>insertSearchResults(data.tv_shows));
+}
+
+function insertSearchResults(data){
+    let htmlcode = "";
+    const addResult = (show) =>{
+        htmlcode +="<div class='searchColumn'>";
+        htmlcode +="<div class='searchTvShow'>";
+        htmlcode +="<div class='pMiddle'>";
+        htmlcode +="<button id='resultButton' class='results' onclick='showResult("+show.id+")'>"+show.name+"</button>";
+        htmlcode += "</div>";
+        htmlcode += "</div>";
+        htmlcode += "</div>";
+        
+    }
+    data.forEach(addResult);
+    document.getElementById("searchresults").innerHTML = htmlcode;
+}
+
+//results page ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+function showResult(showId){
+    document.getElementById("searchresults").style.display="none";
+    document.getElementById("resultPage").style.display="block";
+    getResult(showId);
+}
+function getResult(showId){
+    const fetchPromise = fetch("https://www.episodate.com/api/show-details?q="+showId,
+    {
+        headers:{
+            "Accept":"application/json",
+        },
+    });
+    const streamPromise = fetchPromise.then((response)=>response.json());
+    streamPromise.then((data)=>insertResult(data.tvShow));
+    
+}
+
+function insertResult(data){
+    console.log(data);
+    const episodes = data.episodes;
+    const randomEpisodeNumber = Math.floor(Math.random()*episodes.length);
+    const randomEpisode = episodes[randomEpisodeNumber];
+    let htmlcode = "";
+    htmlcode += "<h2 class ='showTitle'>"+data.name+"</h2>";
+    htmlcode += "<h1 class='episodeName'>"+randomEpisode.name+"</h1>";
+    htmlcode += " <p class='episodeDate'>"+randomEpisode.air_date+"</p>";
+    htmlcode += " <h3 class='episodeSeason'>Season "+randomEpisode.season+" Episode "+randomEpisode.episode+"</h3> ";
+    htmlcode += "<p class='descriptionTitle'>Description:</p>";
+    htmlcode += "<p class='showDescription'>"+data.description+"</p>";
+
+    document.getElementById("resultContent").innerHTML = htmlcode;
+
+}
+
+// main functions ------------------------------------------------------------------------------------------------------------
 getPopularShows();
+document.getElementById("searchbar").addEventListener("click",showSearchPage);
+document.getElementById("searchbar").addEventListener("keydown",getSearchResults);
+
+
+
+

@@ -50,30 +50,92 @@ input, select, textarea{
     margin-bottom: 10px;
     margin-top: 10px;
     margin-right: 5px;
+    padding:0;
     width: 210px;
+    cursor: pointer;
+    outline: none;
+    border:none;
 }
+/* fix this hover for the button */
+
 .popularTvShow{
-    border-color:grey;
-    border-width: 5px;
     height: 282px;
     width: 210px;
 } 
-/* fix this hover */
-/* .popularTvShow:hover{
-    outline: white;
-    border-color: white;
-    border-width: 10px;
-} */
 
 .popular-img{
     height: 100%;
     width:100%;
 }
 .pMiddle{
-    text-align: center;
     max-height:100%;
     max-width: 100%;
     height: 282px;
     width: 210px;
 
 }
+
+/* search page ------------------------------------------------------------------------------------------------- */
+.searchresults{
+    margin-top: 5%;
+    display:none;
+}
+.searchColumn{
+    display: table-cell;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 5px;
+    padding:0;
+    width: 200px;
+    cursor: pointer;
+    outline: none;
+    border:none;
+}
+
+.searchTvShow{
+    height: 100px;
+    width: 200px;
+}
+
+.results{
+    color: white;
+    background-color: #141414;
+    width: 200px;
+    height: 100px;
+    cursor: pointer;
+}
+.results:hover{
+    color: red;
+}
+
+/* result page ------------------------------------------------------------------------------------------ */
+.resultPage{
+    display:none;
+}
+.resultContent{
+    width: 60%;
+    text-align: center;
+    margin-top: 5%;
+}
+.showTitle, .episodeName, .episodeDate, .episodeSeason,.showDescription{ 
+    color:white;
+    text-align: center;
+}
+.descriptionTitle{
+    color:white;
+    text-align: left;
+}
+/* .episodeName{
+    color: white;
+}
+.episodeDate{
+    color:white;
+}
+.episodeSeason{
+    color: white;
+}
+.showDescription{
+    color:white;
+} */
