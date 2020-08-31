@@ -30,6 +30,7 @@ function insertPopular(data){
 // search page ----------------------------------------------------------------------------------------------------------------------
 function showSearchPage(){
     document.getElementById("homepage").style.display="none";
+    document.getElementById("resultPage").style.display="none";
     document.getElementById("searchresults").style.display="block";
 }
 function getSearchResults(){
@@ -88,21 +89,23 @@ function insertResult(data){
     const randomEpisodeNumber = Math.floor(Math.random()*episodes.length);
     const randomEpisode = episodes[randomEpisodeNumber];
     let htmlcode = "";
+    let htmldescriptioncode = "";
     htmlcode += "<h2 class ='showTitle'>"+data.name+"</h2>";
     htmlcode += "<h1 class='episodeName'>"+randomEpisode.name+"</h1>";
     htmlcode += " <p class='episodeDate'>"+randomEpisode.air_date+"</p>";
     htmlcode += " <h3 class='episodeSeason'>Season "+randomEpisode.season+" Episode "+randomEpisode.episode+"</h3> ";
-    htmlcode += "<p class='descriptionTitle'>Description:</p>";
-    htmlcode += "<p class='showDescription'>"+data.description+"</p>";
+    htmldescriptioncode += "<p class='descriptionTitle'>TV Show Description:</p>";
+    htmldescriptioncode += "<p class='showDescription'>"+data.description+"</p>";
 
-    document.getElementById("resultContent").innerHTML = htmlcode;
-
+    document.getElementById("randomepisode").innerHTML = htmlcode;
+    document.getElementById("description").innerHTML = htmldescriptioncode;
 }
 
 // main functions ------------------------------------------------------------------------------------------------------------
 getPopularShows();
 document.getElementById("searchbar").addEventListener("click",showSearchPage);
-document.getElementById("searchbar").addEventListener("keydown",getSearchResults);
+document.getElementById("searchbar").addEventListener("keyup",getSearchResults);
+
 
 
 
