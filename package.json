@@ -1,0 +1,25 @@
+{
+  "name": "netpix",
+  "version": "1.0.0",
+  "description": "Random Episode Generator",
+  "main": "netpix.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChelcieP/netpix.git"
+  },
+  "author": "Chelcie Prasad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChelcieP/netpix/issues"
+  },
+  "homepage": "https://github.com/ChelcieP/netpix#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  }
+}
