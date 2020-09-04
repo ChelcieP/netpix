@@ -4,6 +4,7 @@
 <head>
     <script src="netpix.js" defer="true"></script>
     <link rel="stylesheet" href="netpix.css" />
+    <link href='https://fonts.googleapis.com/css?family=Assistant' rel='stylesheet'>
     <meta charset='UTF-8'>
     <link rel='icon' href='N.png' />
     <title>Netpix</title>
@@ -19,7 +20,7 @@
 
     <div id="homepage">
         <h3 class="homepageTitle">Popular on Netpix</h3>
-        <div id="popularshows">
+        <div id="popularshows" class='popularshows'>
         </div>
     </div>
 
@@ -33,9 +34,7 @@
             <div id='topbuttons'>
                 <button class='playButton' onclick="window.open('https://www.netflix.com/','_blank')">▶ Play</button>
                 <button  id="shuffleButton" class='shuffleButton' value='' onclick='shuffleButton()'>+ Shuffle</button> 
-            </div>
-            <!-- add active to the bottom button? -->
-            <!-- <button class='descriptionButton'>Description</button>                 -->
+            </div>               
 
         </div>
         <div id="description" class='descriptionContent'>
