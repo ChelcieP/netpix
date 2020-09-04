@@ -27,6 +27,10 @@ function insertPopular(data){
     data.forEach(addTvShow);
     document.getElementById("popularshows").innerHTML=htmlcode;
 }
+
+function refreshPage(){
+    location.reload();
+}
 // search page ----------------------------------------------------------------------------------------------------------------------
 function showSearchPage(){
     document.getElementById("homepage").style.display="none";
@@ -112,7 +116,8 @@ function shuffleButton(){
 // main functions ------------------------------------------------------------------------------------------------------------
 getPopularShows();
 document.getElementById("searchbar").addEventListener("click",showSearchPage);
-document.getElementById("searchbar").addEventListener("keyup",getSearchResults);
+document.getElementById("searchbar").addEventListener("keydown",getSearchResults);
+document.getElementById("header").addEventListener('click',refreshPage);
 
 
 
