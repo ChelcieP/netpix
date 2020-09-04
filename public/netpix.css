@@ -33,10 +33,17 @@ input, select, textarea{
 /* Popular shows------------------------------------------------------------------------------------------------------------------------------------ */
 .homepageTitle{
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font:sans-serif;
+    font-family: 'Assistant';
+    /* font:sans-serif; */
     margin-top: 4%;
     margin-left: 2%;
+}
+.popularshows{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 95%;
+    margin-left: 2.5%;
 }
 
 .popularcard{
@@ -59,8 +66,11 @@ input, select, textarea{
     cursor: pointer;
     outline: none;
     border:none;
+    transition: transform .2s;
 }
-/* fix this hover for the button */
+.column:hover{
+    transform: scale(1.1);
+}
 
 .popularTvShow{
     height: 282px;
@@ -119,7 +129,7 @@ input, select, textarea{
 /* result page ------------------------------------------------------------------------------------------ */
 .resultPage{
     display:none;
-    font: sans-serif;
+    font-family: 'Assistant';
     
 }
 .resultContent{
@@ -150,7 +160,7 @@ input, select, textarea{
     width:200px;
     height:50px;
     background: white;
-    font: sans-serif;
+    font-family: 'Assistant';
     font-size: 20px;
     font-weight:bold;
     border-radius: 8px;
@@ -164,7 +174,7 @@ input, select, textarea{
     width:200px;
     height:50px;
     background: grey;
-    font: sans-serif;
+    font-family: 'Assistant';
     font-size: 20px;
     font-weight:bold;
     border-radius: 8px;
