@@ -15,10 +15,10 @@
 <body>
     <div class='top-container'>
         <img id='header' class='header' src="NETPIX.png" />
-        <input id="searchbar" class="searchbar" type='text' placeholder="Search for a TV show" />
+        <input id="searchbar" class="searchbar" type='text' placeholder="Search for a TV show" onkeyup="getSearchResults()"/>
     </div>
 
-    <div id="homepage">
+    <div id="homepage" class='homepage'>
         <h3 class="homepageTitle">Popular on Netpix</h3>
         <div id="popularshows" class='popularshows'>
         </div>
@@ -35,7 +35,7 @@
                 <button class='playButton' onclick="window.open('https://www.netflix.com/','_blank')">▶ Play</button>
                 <button  id="shuffleButton" class='shuffleButton' value='' onclick='shuffleButton()'>+ Shuffle</button> 
             </div>               
-
+            <div id='showPicture' class='showPicture'></div>
         </div>
         <div id="description" class='descriptionContent'>
         </div>

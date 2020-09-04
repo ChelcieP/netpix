@@ -16,7 +16,6 @@ function insertPopular(data){
     let htmlcode ="";
     const addTvShow =(show) =>{
         htmlcode += "<button class='column' onclick='showResult("+show.id+")'>"; 
-        // make sure the homepage display is none.
         htmlcode += "<div class='popularTvShow'>";
         htmlcode += "<div class='pMiddle'>";
         htmlcode += "<img class='popular-img' src='"+show.image_thumbnail_path+"'>";
@@ -35,7 +34,7 @@ function refreshPage(){
 function showSearchPage(){
     document.getElementById("homepage").style.display="none";
     document.getElementById("resultPage").style.display="none";
-    document.getElementById("searchresults").style.display="block";
+    document.getElementById("searchresults").style.display="flex";
 }
 function getSearchResults(){
     const searchValue = document.getElementById("searchbar").value;
@@ -43,6 +42,7 @@ function getSearchResults(){
 }
 
 function getTvShows(search){
+    console.log(search);
     const fetchPromise = fetch("https://www.episodate.com/api/search?q="+search,
     {
         headers:{
@@ -95,6 +95,7 @@ function insertResult(data){
     const episodes = data.episodes;
     const randomEpisodeNumber = Math.floor(Math.random()*episodes.length);
     const randomEpisode = episodes[randomEpisodeNumber];
+    let htmlimagecode ='';
     let htmlcode = "";
     let htmldescriptioncode = "";
     htmlcode += "<h2 class ='showTitle'>"+data.name+"</h2>";
@@ -103,9 +104,11 @@ function insertResult(data){
     htmlcode += " <h3 class='episodeSeason'>Season "+randomEpisode.season+" Episode "+randomEpisode.episode+"</h3> ";
     htmldescriptioncode += "<p class='descriptionTitle'>TV Show Description:</p>";
     htmldescriptioncode += "<p class='showDescription'>"+data.description+"</p>";
+    htmlimagecode += "<img src='"+data.image_path+"'/>";
 
     document.getElementById("randomepisode").innerHTML = htmlcode;
     document.getElementById("description").innerHTML = htmldescriptioncode;
+    document.getElementById("showPicture").innerHTML = htmlimagecode;
 }
 
 function shuffleButton(){
@@ -116,7 +119,6 @@ function shuffleButton(){
 // main functions ------------------------------------------------------------------------------------------------------------
 getPopularShows();
 document.getElementById("searchbar").addEventListener("click",showSearchPage);
-document.getElementById("searchbar").addEventListener("keydown",getSearchResults);
 document.getElementById("header").addEventListener('click',refreshPage);
 
 
