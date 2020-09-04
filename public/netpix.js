@@ -23,7 +23,6 @@ function insertPopular(data){
         htmlcode += "</div>";
         htmlcode += "</div>";
         htmlcode += "</button>";
-
     }
     data.forEach(addTvShow);
     document.getElementById("popularshows").innerHTML=htmlcode;
@@ -71,6 +70,8 @@ function showResult(showId){
     document.getElementById("searchresults").style.display="none";
     document.getElementById("resultPage").style.display="block";
     document.getElementById("homepage").style.display="none";
+
+    document.getElementById("shuffleButton").value = showId;
     getResult(showId);
 }
 function getResult(showId){
@@ -103,10 +104,16 @@ function insertResult(data){
     document.getElementById("description").innerHTML = htmldescriptioncode;
 }
 
+function shuffleButton(){
+    const showID = document.getElementById("shuffleButton").value;
+    getResult(showID);
+}
+
 // main functions ------------------------------------------------------------------------------------------------------------
 getPopularShows();
 document.getElementById("searchbar").addEventListener("click",showSearchPage);
 document.getElementById("searchbar").addEventListener("keyup",getSearchResults);
+
 
 
 
