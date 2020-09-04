@@ -150,6 +150,11 @@ input, select, textarea{
     font-size: 20px;
     font-weight:bold;
     border-radius: 8px;
+    outline: none;
+    border: none;
+}
+.playButton:hover{
+    background: lightgrey;
 }
 .shuffleButton{
     width:200px;
@@ -159,6 +164,11 @@ input, select, textarea{
     font-size: 20px;
     font-weight:bold;
     border-radius: 8px;
+    outline: none;
+    border: none;
+}
+.shuffleButton:hover{
+    background:darkgrey;
 }
 /* .descriptionButton{
     font: sans-serif;
