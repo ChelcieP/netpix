@@ -31,6 +31,9 @@ input, select, textarea{
 }
 
 /* Popular shows------------------------------------------------------------------------------------------------------------------------------------ */
+.homepage{
+    width:100%;
+}
 .homepageTitle{
     color: white;
     font-family: 'Assistant';
@@ -93,6 +96,9 @@ input, select, textarea{
 .searchresults{
     margin-top: 5%;
     display:none;
+    width:100%;
+    align-items: center;
+    flex-wrap: wrap;
 }
 .searchColumn{
     display: table-cell;
@@ -138,16 +144,19 @@ input, select, textarea{
     margin-top: 5%;
     background: rgb(20,20,20);
     background: linear-gradient(90deg, rgba(20,20,20,1) 38%, rgba(229,9,20,1) 91%);
+    margin-left: 3%;
 }
 .descriptionContent{
     width: 60%;
     text-align: center;
-    margin-top: 5%;
+    margin-left: 3%;
 }
 .showTitle, .episodeName, .episodeDate, .episodeSeason,.showDescription{ 
     color:white;
     text-align: left;
-
+}
+.showPicture{
+    float:right;
 }
 .descriptionTitle{
     color:white;
@@ -166,6 +175,7 @@ input, select, textarea{
     border-radius: 8px;
     outline: none;
     border: none;
+    /* margin-left: 3%; */
 }
 .playButton:hover{
     background: lightgrey;
