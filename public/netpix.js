@@ -15,7 +15,8 @@ function getPopularShows(){
 function insertPopular(data){
     let htmlcode ="";
     const addTvShow =(show) =>{
-        htmlcode += "<button class='column'>";
+        htmlcode += "<button class='column' onclick='showResult("+show.id+")'>"; 
+        // make sure the homepage display is none.
         htmlcode += "<div class='popularTvShow'>";
         htmlcode += "<div class='pMiddle'>";
         htmlcode += "<img class='popular-img' src='"+show.image_thumbnail_path+"'>";
@@ -69,6 +70,7 @@ function insertSearchResults(data){
 function showResult(showId){
     document.getElementById("searchresults").style.display="none";
     document.getElementById("resultPage").style.display="block";
+    document.getElementById("homepage").style.display="none";
     getResult(showId);
 }
 function getResult(showId){
