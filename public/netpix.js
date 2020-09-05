@@ -112,7 +112,13 @@ function insertResult(data){
     htmlcode += " <h3 class='episodeSeason'>Season "+randomEpisode.season+" Episode "+randomEpisode.episode+"</h3> ";
     htmldescriptioncode += "<p class='descriptionTitle'>TV Show Description:</p>";
     htmldescriptioncode += "<p class='showDescription'>"+data.description+"</p>";
-    htmlimagecode += "<img src='"+data.image_path+"'/>";
+    if (data.image_path == "https://static.episodate.com"){
+        document.getElementById("resultContent").className = "resultContent-blankPhoto";
+    } else{
+        document.getElementById("resultContent").className = "resultContent";
+        htmlimagecode += "<img src='"+data.image_path+"'/>";
+    }
+    
 
     document.getElementById("randomepisode").innerHTML = htmlcode;
     document.getElementById("description").innerHTML = htmldescriptioncode;
