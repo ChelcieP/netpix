@@ -35,6 +35,7 @@ function showSearchPage(){
     document.getElementById("homepage").style.display="none";
     document.getElementById("resultPage").style.display="none";
     document.getElementById("searchresults").style.display="flex";
+    document.getElementById("close").style.display="block";
 }
 function getSearchResults(){
     const searchValue = document.getElementById("searchbar").value;
@@ -67,6 +68,13 @@ function insertSearchResults(data){
     }
     data.forEach(addResult);
     document.getElementById("searchresults").innerHTML = htmlcode;
+}
+function closeSearchPage(){
+    document.getElementById("homepage").style.display="block";
+    document.getElementById("resultPage").style.display="none";
+    document.getElementById("searchresults").style.display="none";
+    document.getElementById("close").style.display="none";
+    document.getElementById("searchbar").value = '';
 }
 
 //results page ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -120,6 +128,7 @@ function shuffleButton(){
 getPopularShows();
 document.getElementById("searchbar").addEventListener("click",showSearchPage);
 document.getElementById("header").addEventListener('click',refreshPage);
+document.getElementById("close").addEventListener('click',closeSearchPage);
 
 
 

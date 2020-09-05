@@ -3,7 +3,7 @@ body{
     background-color: #141414;
     width:95%;
 }
-/* changed margin to padding */
+
 .top-container{
     padding-top: 2%;
     padding-left: 3%;
@@ -28,6 +28,16 @@ body{
     width: 30%;
     outline: none;
 }
+.close{
+    color: white;
+    font-family: 'Assistant';
+    font-size: 20px;
+    margin: none;
+    padding-left: 8px;
+    cursor: pointer;
+    display: none;
+}
+
 input, select, textarea{
     color:white;
 }
