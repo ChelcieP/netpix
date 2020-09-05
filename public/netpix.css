@@ -39,8 +39,6 @@ input, select, textarea{
 .homepageTitle{
     color: white;
     font-family: 'Assistant';
-    /* font:sans-serif; */
-    /* changed margin to padding */
     padding-top: 4%;
     padding-left: 2%;
 }
@@ -48,16 +46,16 @@ input, select, textarea{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-around;
-    width: 95%;
+    /* justify-content: space-around; */
+    width: 100%;
     margin-left: 2.5%;
 }
 
 .popularcard{
     display: table;
     width: 100%;
-    /* margin-left: 5%;
-    margin-right: 5%; */
+    margin-left: 5%;
+    margin-right: 5%;
     text-align: start;
 }
 
