@@ -165,10 +165,8 @@ input, select, textarea{
     background: linear-gradient(90deg, rgba(20,20,20,1) 38%, rgba(229,9,20,1) 91%); */
     /* background: rgb(20,20,20);
     background: linear-gradient(90deg, rgba(20,20,20,1) 35%, rgba(95,15,13,1) 54%, rgba(196,9,4,1) 79%, rgba(246,6,0,0.9206057422969187) 80%, rgba(238,40,26,0.3211659663865546) 82%, rgba(231,68,46,0.024247198879551846) 90%); */
-    /* background: rgb(20,20,20);
-    background: linear-gradient(90deg, rgba(20,20,20,1) 37%, rgba(95,15,13,1) 54%, rgba(196,9,4,1) 70%, rgba(246,6,0,0.9206057422969187) 80%, rgba(235,54,36,0.4192051820728291) 85%, rgba(238,40,26,0.3211659663865546) 87%, rgba(231,68,46,0.024247198879551846) 90%); */
     background: rgb(20,20,20);
-    background: linear-gradient(90deg, rgba(20,20,20,1) 37%, rgba(95,15,13,1) 54%, rgba(196,9,4,1) 70%, rgba(246,6,0,0.9206057422969187) 80%, rgba(235,54,36,0.6937149859943977) 85%, rgba(238,40,26,0.38279061624649857) 87%, rgba(231,68,46,0.024247198879551846) 90%);
+background: linear-gradient(90deg, rgba(20,20,20,1) 37%, rgba(95,15,13,1) 54%, rgba(196,9,4,1) 70%, rgba(246,6,0,0.9206057422969187) 80%, rgba(235,54,36,0.6937149859943977) 85%, rgba(238,40,26,0.38279061624649857) 87%, rgba(231,68,46,0.024247198879551846) 90%);
     margin-left: 3%;
     display:inline-flex;
 }
@@ -178,12 +176,12 @@ input, select, textarea{
         background: rgb(20,20,20);
     background: linear-gradient(90deg, rgba(20,20,20,1) 35%, rgba(95,15,13,1) 54%, rgba(196,9,4,1) 70%, rgba(246,6,0,0.9206057422969187) 75%, rgba(238,40,26,0.3211659663865546) 80%, rgba(231,68,46,0.024247198879551846) 84%);
     }
-    
+}
 /* for phones */
-@media (max-width: 900px){
+@media (max-width: 1000px){
     .resultContent{
         background: rgb(20,20,20);
-    background: linear-gradient(90deg, rgba(20,20,20,1) 35%, rgba(95,15,13,1) 48%, rgba(196,9,4,1) 58%, rgba(246,6,0,0.9206057422969187) 64%, rgba(238,40,26,0.3211659663865546) 69%, rgba(231,68,46,0.024247198879551846) 75%);
+    background: linear-gradient(90deg, rgba(20,20,20,1) 35%, rgba(95,15,13,1) 54%, rgba(196,9,4,1) 70%, rgba(246,6,0,0.9206057422969187) 75%, rgba(238,40,26,0.3211659663865546) 80%, rgba(231,68,46,0.024247198879551846) 84%);
     }
 }
 .descriptionContent{
