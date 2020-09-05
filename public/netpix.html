@@ -13,21 +13,26 @@
 </head>
 
 <body>
+    <!-- the nav bar ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
     <div class='top-container'>
         <img id='header' class='header' src="NETPIX.png" />
         <input id="searchbar" class="searchbar" type='text' placeholder="Search for a TV show" onkeyup="getSearchResults()"/>
         <p id='close' class='close'>X</p>
     </div>
 
+    <!-- the homepage ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <div id="homepage" class='homepage'>
         <h3 class="homepageTitle">Popular on Netpix</h3>
         <div id="popularshows" class='popularshows'>
         </div>
     </div>
 
-    <div id="searchresults" class="searchresults">
-    </div>
+    <!-- the search page -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div id='searchContainer' class='searchContainer'>
+            <div id="searchresults" class="searchresults"></div>  
+        </div>
 
+    <!-- the result page ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <div id="resultPage" class="resultPage">
         <div id="resultContent" class="resultContent">
             <div class='resultInfo'>
