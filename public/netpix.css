@@ -302,3 +302,6 @@ input, select, textarea{
 .episodeName{
     font-size: 40px;
 }
+.showDescription{
+    font-size: 15px;
+}
