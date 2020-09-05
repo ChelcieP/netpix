@@ -27,6 +27,7 @@ body{
     border-width: 1px;
     width: 30%;
     outline: none;
+    border-style:solid;
 }
 .close{
     color: white;
@@ -191,14 +192,22 @@ input, select, textarea{
     }
 }
 .descriptionContent{
-    width: 60%;
+    width: 94%;
     text-align: center;
     margin-left: 3%;
+    border-left-color: #e7442e;
+    border-left-width: 3px;
+    border-left-style: solid;
+    padding-left: 5px;
 }
 
 .showTitle, .episodeName, .episodeDate, .episodeSeason,.showDescription{ 
     color:white;
     text-align: left;
+}
+.belowButtons, .ratings-country-season{
+    text-align: left;
+    color:gray;
 }
 .showPicture{
     justify-content: flex-end;
@@ -217,6 +226,11 @@ input, select, textarea{
 .resultBackground{
     width:100%;
 }
+.play{
+    height:30%;
+    padding-right: 1px;
+}
+
 .playButton{
     width:200px;
     height:50px;
@@ -246,19 +260,47 @@ input, select, textarea{
 .shuffleButton:hover{
     background:darkgrey;
 }
-/* .descriptionButton{
-    font: sans-serif;
-    font-size: 20px;
-} */
-/* .episodeName{
-    color: white;
-}
 .episodeDate{
-    color:white;
+    display:inline;
+    font-size: 25px;
+}
+.showTitle{
+    display:inline;
+    color: #e7442e;
+    padding-right: 3px;
+    font-size: 25px;
+    font-weight: bold;
+    /* change this to flex box in line? */
+}
+.rating, .country, .seasons{
+    display:inline;
+    margin: auto;
+}
+.country{
+    border-color: gray;
+    border-width: 1px;
+    border-style: solid;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 5px;
+    padding-right:5px;
+}
+.buttons{
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+.network{
+    margin-bottom: 0;
+}
+.genres{
+    margin-top:0;
+}
+.date-title{
+    margin-bottom:10px;
 }
 .episodeSeason{
-    color: white;
+    font-size: 30px;
 }
-.showDescription{
-    color:white;
-} */
+.episodeName{
+    font-size: 40px;
+}

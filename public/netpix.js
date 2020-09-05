@@ -106,12 +106,35 @@ function insertResult(data){
     let htmlimagecode ='';
     let htmlcode = "";
     let htmldescriptioncode = "";
-    htmlcode += "<h2 class ='showTitle'>"+data.name+"</h2>";
+    let htmlBelowButtons = '';
+    htmlcode += "<h2 class ='episodeSeason'>Season "+randomEpisode.season+" Episode "+randomEpisode.episode+"</h2>";
     htmlcode += "<h1 class='episodeName'>"+randomEpisode.name+"</h1>";
-    htmlcode += " <p class='episodeDate'>"+randomEpisode.air_date+"</p>";
-    htmlcode += " <h3 class='episodeSeason'>Season "+randomEpisode.season+" Episode "+randomEpisode.episode+"</h3> ";
+    htmlcode += "<div class='date-title'>";
+    htmlcode += " <h3 class='showTitle'>"+data.name+"</h3> ";
+    let dateList = randomEpisode.air_date.split(" ");
+    htmlcode += " <p class='episodeDate'>   |    "+dateList[0]+"</p>";
+    htmlcode += "</div>";
+    htmlcode += "<div class='ratings-country-season'>";
+    htmlcode += "<p class='rating'><b>Rating:</b> "+data.rating+"</p>";
+    htmlcode += "<p class='country'>"+data.country+"</p>";
+    htmlcode += "<p class='seasons'>"+episodes[episodes.length-1].season+" Seasons</p>";
+    htmlcode += "</div>";
+
+    htmlBelowButtons += "<p class='network'><b>Network:</b> "+data.network+"</p>";
+    let genres = '';
+    for(g=0;g<data.genres.length;g++){
+        if(g != data.genres.length - 1){
+            genres += data.genres[g];
+            genres +=", ";
+        } else {
+            genres += data.genres[g];
+        }
+    }
+    htmlBelowButtons += "<p class='genres'><b>Genres:</b> "+genres+"</p>";
+
     htmldescriptioncode += "<p class='descriptionTitle'>TV Show Description:</p>";
     htmldescriptioncode += "<p class='showDescription'>"+data.description+"</p>";
+
     if (data.image_path == "https://static.episodate.com"){
         document.getElementById("resultContent").className = "resultContent-blankPhoto";
     } else{
@@ -121,6 +144,7 @@ function insertResult(data){
     
 
     document.getElementById("randomepisode").innerHTML = htmlcode;
+    document.getElementById("belowButtons").innerHTML = htmlBelowButtons;
     document.getElementById("description").innerHTML = htmldescriptioncode;
     document.getElementById("showPicture").innerHTML = htmlimagecode;
 }
