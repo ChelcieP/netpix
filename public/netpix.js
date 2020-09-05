@@ -8,7 +8,6 @@ function getPopularShows(){
     });
 
     const streamPromise = fetchPromise.then((response)=>response.json());
-    // console.log(streamPromise);
     streamPromise.then((data)=>insertPopular(data.tv_shows));
 };
 
@@ -43,7 +42,6 @@ function getSearchResults(){
 }
 
 function getTvShows(search){
-    console.log(search);
     const fetchPromise = fetch("https://www.episodate.com/api/search?q="+search,
     {
         headers:{
@@ -57,14 +55,26 @@ function getTvShows(search){
 function insertSearchResults(data){
     let htmlcode = "";
     const addResult = (show) =>{
-        htmlcode +="<div class='searchColumn'>";
-        htmlcode += "<div id='resultButton' class='results' onclick='showResult("+show.id+")'>";
-        htmlcode += "<img class='searchPicture' src='"+show.image_thumbnail_path+"'/>";
-        htmlcode += "<p class='searchResultName'>"+show.name+"</p>";
-        // htmlcode +="<button id='resultButton' class='results' onclick='showResult("+show.id+")'><img class='searchPicture' src='"+show.image_thumbnail_path+"'/>"+show.name+"</button>";
-        htmlcode += "</div>";
-        htmlcode += "</div>";
-        
+
+        var img = new Image();
+        img.src = show.image_thumbnail_path;
+
+        if(img.height > 270){
+            htmlcode +="<div class='searchColumn'>";
+            htmlcode += "<div id='resultButton' class='results' onclick='showResult("+show.id+")'>";
+            htmlcode += "<img class='searchPicture' src='"+show.image_thumbnail_path+"'/>";
+            htmlcode += "<p class='searchResultName'>"+show.name+"</p>";
+            htmlcode += "</div>";
+            htmlcode += "</div>";
+        } else{
+            htmlcode +="<div class='searchColumn'>";
+            htmlcode += "<div id='resultButton' class='results' onclick='showResult("+show.id+")'>";
+            htmlcode += "<img class='searchPicture' src='https://static.episodate.com/images/no-image.png'/>";
+            htmlcode += "<p class='searchResultName'>"+show.name+"</p>";
+            htmlcode += "</div>";
+            htmlcode += "</div>";
+        }
+
     }
     data.forEach(addResult);
     document.getElementById("searchresults").innerHTML = htmlcode;
@@ -82,6 +92,7 @@ function showResult(showId){
     document.getElementById("searchresults").style.display="none";
     document.getElementById("resultPage").style.display="block";
     document.getElementById("homepage").style.display="none";
+    document.getElementById("close").style.display="none";
 
     document.getElementById("shuffleButton").value = showId;
     getResult(showId);
@@ -99,7 +110,6 @@ function getResult(showId){
 }
 
 function insertResult(data){
-    console.log(data);
     const episodes = data.episodes;
     const randomEpisodeNumber = Math.floor(Math.random()*episodes.length);
     const randomEpisode = episodes[randomEpisodeNumber];
@@ -132,10 +142,11 @@ function insertResult(data){
     }
     htmlBelowButtons += "<p class='genres'><b>Genres:</b> "+genres+"</p>";
 
-    htmldescriptioncode += "<p class='descriptionTitle'>TV Show Description:</p>";
+    htmldescriptioncode += "<p class='descriptionTitle'>TV Series Description:</p>";
     htmldescriptioncode += "<p class='showDescription'>"+data.description+"</p>";
-
-    if (data.image_path == "https://static.episodate.com"){
+    var img = new Image();
+    img.src = data.image_thumbnail_path;
+    if (data.image_path == "https://static.episodate.com" || img.height < 200){
         document.getElementById("resultContent").className = "resultContent-blankPhoto";
     } else{
         document.getElementById("resultContent").className = "resultContent";
