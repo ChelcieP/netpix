@@ -1,10 +1,12 @@
 /* header --------------------------------------------------------------------- */
 body{
     background-color: #141414;
+    width:95%;
 }
+/* changed margin to padding */
 .top-container{
-    margin-top: 2%;
-    margin-left: 3%;
+    padding-top: 2%;
+    padding-left: 3%;
     width: 100%;
     height: 1%;
     display: flex;
@@ -38,13 +40,15 @@ input, select, textarea{
     color: white;
     font-family: 'Assistant';
     /* font:sans-serif; */
-    margin-top: 4%;
-    margin-left: 2%;
+    /* changed margin to padding */
+    padding-top: 4%;
+    padding-left: 2%;
 }
 .popularshows{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: space-around;
     width: 95%;
     margin-left: 2.5%;
 }
@@ -52,8 +56,8 @@ input, select, textarea{
 .popularcard{
     display: table;
     width: 100%;
-    margin-left: 5%;
-    margin-right: 5%;
+    /* margin-left: 5%;
+    margin-right: 5%; */
     text-align: start;
 }
 
