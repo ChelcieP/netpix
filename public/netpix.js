@@ -58,10 +58,10 @@ function insertSearchResults(data){
     let htmlcode = "";
     const addResult = (show) =>{
         htmlcode +="<div class='searchColumn'>";
-        htmlcode +="<div class='searchTvShow'>";
-        htmlcode +="<div class='pMiddle'>";
-        htmlcode +="<button id='resultButton' class='results' onclick='showResult("+show.id+")'>"+show.name+"</button>";
-        htmlcode += "</div>";
+        htmlcode += "<div id='resultButton' class='results' onclick='showResult("+show.id+")'>";
+        htmlcode += "<img class='searchPicture' src='"+show.image_thumbnail_path+"'/>";
+        htmlcode += "<p class='searchResultName'>"+show.name+"</p>";
+        // htmlcode +="<button id='resultButton' class='results' onclick='showResult("+show.id+")'><img class='searchPicture' src='"+show.image_thumbnail_path+"'/>"+show.name+"</button>";
         htmlcode += "</div>";
         htmlcode += "</div>";
         
